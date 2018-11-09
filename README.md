@@ -8,6 +8,6 @@ data. It's designed using windows forms and interacts with a Microsoft SQL Serve
 * Designed with Windows Forms in Visual Studio
 * Communicates with Microsoft SQL Server using SQL commands
 
-Test line..
+Test line
 
 
