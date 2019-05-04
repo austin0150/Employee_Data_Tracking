@@ -29,6 +29,7 @@ namespace Employee_Data_DB_Access
 
         }
 
+        //Search for the user
         private void button4_Click(object sender, EventArgs e)
         {
             string searchCmd = "";
@@ -131,6 +132,7 @@ namespace Employee_Data_DB_Access
             }
         }
 
+        //Delete the Employee
         private void button3_Click(object sender, EventArgs e)
         {
             string deleteSearchCmd = "SELECT COUNT(1) FROM Employee WHERE Employee_ID = " + textBox1.Text;
@@ -168,6 +170,8 @@ namespace Employee_Data_DB_Access
                 MessageBox.Show("Error Deleting Employee");
             }
         }
+
+        //Refresh the table
         public void refreshTable()
         {
             DataSet refreshDs = new DataSet();
@@ -193,6 +197,7 @@ namespace Employee_Data_DB_Access
             refreshTable();
         }
 
+        //Update employee
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -254,5 +259,45 @@ namespace Employee_Data_DB_Access
             }
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = "", firstName = "", lastName = "", position = "", phoneNum = "", address = "", state = "", zip = "", startDate = "";
+            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+            //Pull the data out of the row
+            id = Convert.ToString(selectedRow.Cells[0].Value);
+            firstName = Convert.ToString(selectedRow.Cells[1].Value);
+            lastName = Convert.ToString(selectedRow.Cells[2].Value);
+            position = Convert.ToString(selectedRow.Cells[3].Value);
+            phoneNum = Convert.ToString(selectedRow.Cells[4].Value);
+            address = Convert.ToString(selectedRow.Cells[5].Value);
+            state = Convert.ToString(selectedRow.Cells[6].Value);
+            zip = Convert.ToString(selectedRow.Cells[7].Value);
+            startDate = Convert.ToString(selectedRow.Cells[8].Value);
+
+            //Set the text fields to the correct data
+            textBox1.Text = id;
+            textBox2.Text = firstName;
+            textBox3.Text = lastName;
+            textBox4.Text = position;
+            textBox5.Text = phoneNum;
+            textBox6.Text = address;
+            textBox7.Text = state;
+            textBox8.Text = zip;
+            textBox9.Text = startDate;
+        }
+
+        //Add new employee
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //The name shouldn't really be EDA but I can go back to that later
+            new EDA().Show();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
     }
 }
