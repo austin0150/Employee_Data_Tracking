@@ -42,11 +42,18 @@ namespace Employee_Data_DB_Access
                 con.Open();
                 MessageBox.Show("Connection to DataBase Succsessful");
                 con.Close();
+                StatusImg.Image = Employee_Data_DB_Access.Properties.Resources.database_ok;
             }
             catch
             {
                 MessageBox.Show("Connection to DataBase Failed \n Contact IT Team for support");
+                StatusImg.Image = Employee_Data_DB_Access.Properties.Resources.database_error;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

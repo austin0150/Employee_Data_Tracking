@@ -219,7 +219,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(79)))), ((int)(((byte)(130)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Roboto", 11.25F);
@@ -254,7 +254,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(115)))), ((int)(((byte)(155)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(79)))), ((int)(((byte)(130)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
@@ -276,7 +276,7 @@
             this.panel1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(1, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(623, 410);
+            this.panel1.Size = new System.Drawing.Size(623, 409);
             this.panel1.TabIndex = 21;
             // 
             // exitButton
@@ -293,6 +293,7 @@
             this.exitButton.TabIndex = 22;
             this.exitButton.Text = "X";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // AddEmpHeader
             // 
@@ -329,6 +330,7 @@
             this.Name = "EDA";
             this.Text = "EDA";
             this.Load += new System.EventHandler(this.EDA_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EDA_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.employeeInfoDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

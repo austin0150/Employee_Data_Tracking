@@ -87,6 +87,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
@@ -116,6 +117,33 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\database_ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,14 @@ namespace Employee_Data_DB_Access
 {
     public partial class EDA : Form
     {
+        //Allow for draggable window
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Austin\\EmployeeInfo\\EmployeeInfoDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         public EDA()
@@ -49,6 +57,8 @@ namespace Employee_Data_DB_Access
                 Comm.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Employee Added Sucessfuly");
+
+                this.Close();
             }
             catch(SqlException f)
             {
@@ -56,5 +66,18 @@ namespace Employee_Data_DB_Access
             }
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void EDA_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
     }
 }
